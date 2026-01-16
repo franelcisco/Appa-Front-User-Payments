@@ -1,0 +1,40 @@
+@import "tailwindcss";
+@plugin 'flowbite-react/plugin/tailwindcss';
+@source '../.flowbite-react/class-list.json';
+
+@theme {
+  --color-bone-primary: #3b2424;
+  --color-bone-secondary: #ffc396;
+  --color-bone-orange: #ff7340;
+  --color-bone-yellow: #f6b73b;
+  --color-appa-blue-light: #ffdb94;
+  --color-bone-purple: #d2a4d7;
+  --color-bone-beige: #fef6e1;
+  --color-bone-beige-light: #fff4e0;
+  --default-font-family: "BricolageGrotesque", sans-serif;
+  --text-xxs: 0.625rem;
+  --color-appa-primary: #303030;
+  --color-appa-beige: #f3e0be;
+  --color-appa-blue: #44d1fe;
+  --color-appa-blue-light: #a5e9ff;
+  --color-appa-gray: #f0efef;
+  --color-appa-yellow: #faed72;
+}
+
+@font-face {
+  font-family: BricolageGrotesque;
+  src: url(../font/BricolageGrotesque.ttf);
+  src: url(../font/BricolageGrotesque.ttf) format("ttf"),
+    url(../font/BricolageGrotesque.ttf) format("truetype");
+}
+
+[role="button"],
+button {
+  cursor: pointer !important;
+}
+
+body,
+html {
+  font-family: "BricolageGrotesque", sans-serif !important;
+  color: #303030 !important;
+}
