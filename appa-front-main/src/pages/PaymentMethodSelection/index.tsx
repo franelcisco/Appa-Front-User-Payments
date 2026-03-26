@@ -1,5 +1,5 @@
 import { Card, Button } from "flowbite-react";
-import { FaMobileScreen, FaMoneyCheck } from "react-icons/fa6";
+import { FaMobileScreen, FaMoneyCheck, FaBuildingColumns } from "react-icons/fa6";
 import { OrderDetailsModal } from "../../components/OrderDetails";
 import { useState } from "react";
 import type { OrderResponse } from "@/types/dtos/store.dto";
@@ -73,6 +73,21 @@ export function PaymentMethodSelection({
                 <div className="col-span-2 text-start">Pago Móvil</div>
               </div>
             </Button>
+            {import.meta.env.VITE_ENABLE_DOMICILIACION === "true" && (
+              <Button
+                className="border-appa-blue hover:bg-appa-blue"
+                type="button"
+                color="light"
+                onClick={() => onSelect("domiciliacion")}
+              >
+                <div className="w-4/5 grid grid-cols-3 items-center">
+                  <div className="justify-items-center">
+                    <FaBuildingColumns className="mr-2 h-5 w-5" />
+                  </div>
+                  <div className="col-span-2 text-start">Domiciliación</div>
+                </div>
+              </Button>
+            )}
             {/* <Button
               className="border-appa-blue hover:bg-appa-blue"
               type="button"

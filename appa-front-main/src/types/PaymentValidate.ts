@@ -3,4 +3,5 @@ export type PaymentMethodsType =
   | "cash"
   | "mobilePayment"
   | "zelle"
+  | "domiciliacion"
   | undefined;

@@ -36,5 +36,11 @@ export const endpoints = {
     validateMobilePaymentManual: {
       endpoint: "/payments/validate-mobile-payment-manual",
     },
+    submitDomiciliacion: {
+      endpoint: "/payments/domiciliacion/submit",
+    },
+    validateDomiciliacion: {
+      endpoint: "/payments/domiciliacion/validate",
+    },
   },
 };

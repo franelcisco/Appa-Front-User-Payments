@@ -1,5 +1,6 @@
 import { DirectDebit } from "@/pages/DirectDebit";
 import { MobilePayment } from "@/pages/MobilePayment";
+import { Domiciliacion } from "@/pages/Domiciliacion";
 import type { OrderResponse } from "@/types/dtos/store.dto";
 import type { PaymentMethodsType } from "@/types/PaymentValidate";
 
@@ -17,6 +18,8 @@ export const PaymentMethodRenderer = ({
       return <DirectDebit order={order} selectedMethod={onSelect} />;
     case "mobilePayment":
       return <MobilePayment order={order} selectedMethod={onSelect} />;
+    case "domiciliacion":
+      return <Domiciliacion order={order} selectedMethod={onSelect} />;
     default:
       return null;
   }

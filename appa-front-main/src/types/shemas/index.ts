@@ -94,6 +94,34 @@ export const mobilePaymentReturnSchema = yup.object().shape({
     .required("El tipo de DNI es obligatorio"),
 });
 
+export const domiciliacionSchema = yup.object().shape({
+  bank: yup.string().required("El banco es obligatorio"),
+  phonePrefix: yup
+    .string()
+    .oneOf(
+      ["0412", "0414", "0424", "0416", "0426"],
+      "Selecciona un prefijo válido"
+    )
+    .required("El prefijo es obligatorio"),
+  phone: yup
+    .string()
+    .matches(/^\d{7}$/, "El teléfono debe tener 7 dígitos")
+    .required("El teléfono es obligatorio"),
+  phoneConfirm: yup
+    .string()
+    .oneOf([yup.ref("phone")], "Los teléfonos no coinciden")
+    .required("Confirma tu teléfono"),
+  dni: yup
+    .string()
+    .matches(/^\d{6,8}$/, "La cédula debe tener entre 6 y 8 dígitos")
+    .required("La cédula es obligatoria"),
+  dniType: yup
+    .string()
+    .oneOf(["V", "E", "P", "J", "G"], "El tipo de documento es inválido")
+    .required("El tipo de documento es obligatorio"),
+  orderId: yup.string().required("El ID de la orden es obligatorio"),
+});
+
 export const updateCustomerParentIDSchema = yup.object().shape({
   dni: yup
     .string()

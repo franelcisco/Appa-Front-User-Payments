@@ -53,3 +53,17 @@ export type MobilePaymentReturnRequest = {
   dni: string;
   dniType: "V" | "E" | "P" | "J" | "G";
 };
+
+export type DomiciliacionRequest = {
+  bank: string;
+  phone: string;
+  phonePrefix: string;
+  dni: string;
+  dniType: "V" | "E" | "P" | "J" | "G";
+  orderId: string;
+};
+
+export type DomiciliacionResponse = {
+  success: boolean;
+  message: string;
+};

@@ -138,6 +138,23 @@ const ValidateMobilePaymentManual = async (
   }
 };
 
+// TODO: Replace with real API calls when backend is ready
+const submitDomiciliacion = async (
+  _data: import("@/types/dtos/payments.dto").DomiciliacionRequest
+): Promise<import("@/types/dtos/payments.dto").DomiciliacionResponse> => {
+  // Placeholder: simulate network delay
+  await new Promise((resolve) => setTimeout(resolve, 1500));
+  return { success: true, message: "Solicitud enviada exitosamente" };
+};
+
+const validateDomiciliacion = async (
+  _orderId: string
+): Promise<import("@/types/dtos/payments.dto").DomiciliacionResponse> => {
+  // Placeholder: simulate validation delay
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+  return { success: true, message: "Domiciliación validada exitosamente" };
+};
+
 export const paymentsService = {
   getBCVTasa,
   generateOTP,
@@ -146,4 +163,6 @@ export const paymentsService = {
   ValidateMobilePayment,
   ValidateZelle,
   ValidateMobilePaymentManual,
+  submitDomiciliacion,
+  validateDomiciliacion,
 };
